@@ -31,7 +31,7 @@
 | Action | 是 | String | 公共参数，本接口取值：DeleteMediaForDY。 |
 | Version | 是 | String | 公共参数，本接口取值：2018-07-17。 |
 | Region | 否 | String | 公共参数，本接口不需要传递此参数。 |
-| CosBucket | 是 | String | 文件所在的 COS Bucket 名，如 wsd-tx-ugc-pub。 |
+| CosBucket | 是 | String | 文件所在的 COS Bucket 名，如 bucketxxx。 |
 | CosRegion | 是 | String | 文件所在的 COS Bucket 所属园区，如 ap-chongqing。 |
 | ObjectSet.N | 是 | Array of String | 文件的 COS 完整路径。 |
 
@@ -49,7 +49,7 @@
 
 ```
 https://vod.tencentcloudapi.com/?Action=DeleteMediaForDY
-&CosBucket=wsd-tx-ugc-pub
+&CosBucket=bucketxxx
 &CosRegion=ap-chongqing
 &ObjectSet.0=2021/0101/xxx.m3u8
 &<公共请求参数>
