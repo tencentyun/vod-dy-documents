@@ -24,7 +24,7 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/product/266/17841?!preview&preview_docmenu=1&lang=cn&!document=1)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/213/6976)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
@@ -82,7 +82,7 @@ https://vod.tencentcloudapi.com/?Action=DeleteMediaForDY
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/product/266/17843?!preview&preview_docmenu=1&lang=cn&!document=1#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/213/6982)。
 
 | 错误码 | 描述 |
 |---------|---------|
