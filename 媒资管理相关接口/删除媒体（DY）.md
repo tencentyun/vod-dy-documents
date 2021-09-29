@@ -34,6 +34,7 @@
 | CosBucket | 是 | String | 文件所在的 COS Bucket 名，如 bucketxxx。 |
 | CosRegion | 是 | String | 文件所在的 COS Bucket 所属园区，如 ap-chongqing。 |
 | ObjectSet.N | 是 | Array of String | 文件的 COS 完整路径。 |
+| SessionContext | 否 | String | 来源上下文，用于透传用户请求信息，删除回调将返回该字段值，最长 1000 个字符。 |
 
 ## 3. 输出参数
 
