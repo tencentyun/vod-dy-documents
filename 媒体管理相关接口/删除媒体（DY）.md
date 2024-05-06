@@ -4,8 +4,6 @@
 
 删除指定文件，如果是 m3u8 文件，会同时删除 ts 文件。
 
-默认接口请求频率限制：100次/秒。
-
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
@@ -30,7 +28,7 @@
 |---------|---------|---------|---------|
 | Action | 是 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，本接口取值：DeleteMediaForDY。 |
 | Version | 是 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，本接口取值：2018-07-17。 |
-| Region | 否 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，此参数为可选参数。 |
+| Region | 否 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，本接口不需要传递此参数。 |
 | CosBucket | 是 | String | 文件所在的 COS Bucket 名，如 wsd-tx-ugc-pub。<br/>示例值：wsd-tx-ugc-pub |
 | CosRegion | 是 | String | 文件所在的 COS Bucket 所属园区，如 ap-chongqing。<br/>示例值：ap-chongqing |
 | ObjectSet.N | 是 | Array of String | 文件的 COS 完整路径。<br/>示例值：["2021/0101/xxx.m3u8"] |

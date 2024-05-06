@@ -4,8 +4,6 @@
 
 通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。
 
-默认接口请求频率限制：100次/秒。
-
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">

@@ -4,8 +4,6 @@
 
 获取媒体的元信息，包括视频画面宽、高、编码格式、时长、帧率等。
 
-默认接口请求频率限制：100次/秒。
-
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">

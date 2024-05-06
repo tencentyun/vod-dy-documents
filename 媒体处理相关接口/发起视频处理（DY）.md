@@ -13,8 +13,6 @@
 8. 智能内容分析（标签、分类、封面、按帧标签）；
 9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。
 
-默认接口请求频率限制：100次/秒。
-
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">

@@ -8,8 +8,6 @@
 2. 对多个文件进行拼接，生成一个新的视频；
 3. 对多个文件进行剪辑，然后再拼接，生成一个新的视频。
 
-默认接口请求频率限制：100次/秒。
-
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
         <div class="rno-api-explorer-hd">
