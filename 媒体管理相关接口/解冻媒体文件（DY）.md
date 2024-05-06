@@ -1,7 +1,5 @@
 ## 1. 接口描述
 
-<strong><font color="red">此接口被设置为 官网公开展示 。</font></strong>
-
 接口请求域名： vod.tencentcloudapi.com 。
 
 当媒体文件的存储类型是归档存储或深度归档存储时，是不可访问的。如需访问，则需要调用本接口进行解冻，解冻后可访问的媒体文件是临时的，在有效期过后，则不可访问。
@@ -24,24 +22,24 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/213/6976)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/266/31756)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
-| Action | 是 | String | 公共参数，本接口取值：RestoreMediaForDY。 |
-| Version | 是 | String | 公共参数，本接口取值：2018-07-17。 |
-| Region | 否 | String | 公共参数，本接口不需要传递此参数。 |
-| CosBucket | 是 | String | 文件所在的 COS Bucket 名，如 bucket-xxx。 |
-| CosRegion | 是 | String | 文件所在的 COS Bucket 所属园区，如 ap-chongqing。 |
-| Object | 是 | String | 文件的 COS 完整路径。 |
-| RestoreDay | 否 | Integer | 解冻出的临时媒体文件的可访问持续时长，单位为“天”。默认为1天。 |
-| SourceContext | 否 | String | 来源上下文，用于透传用户请求信息，最长 1000 个字符。 |
+| Action | 是 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，本接口取值：RestoreMediaForDY。 |
+| Version | 是 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，本接口取值：2018-07-17。 |
+| Region | 否 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，本接口不需要传递此参数。 |
+| CosBucket | 是 | String | 文件所在的 COS Bucket 名，如 bucket-xxx。<br/>示例值：xxx-bucket |
+| CosRegion | 是 | String | 文件所在的 COS Bucket 所属园区，如 ap-chongqing。<br/>示例值：ap-chongqing |
+| Object | 是 | String | 文件的 COS 完整路径。<br/>示例值：2021/0101/xxx.mp4 |
+| RestoreDay | 否 | Integer | 解冻出的临时媒体文件的可访问持续时长，单位为“天”。默认为1天。<br/>示例值：5 |
+| SourceContext | 否 | String | 来源上下文，用于透传用户请求信息，最长 1000 个字符。<br/>示例值：123 |
 
 ## 3. 输出参数
 
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
-| RequestId | String | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。|
+| RequestId | String | 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。|
 
 ## 4. 示例
 
@@ -57,21 +55,21 @@ X-TC-Action: RestoreMediaForDY
 <公共请求参数>
 
 {
-    "SourceContext": "xxxx", 
-    "CosBucket": "bucket-xxx", 
-    "CosRegion": "ap-chongqing", 
-    "Object": "2021/0101/xxx.mp4", 
+    "SourceContext": "xxxx",
+    "CosBucket": "bucket-xxx",
+    "CosRegion": "ap-chongqing",
+    "Object": "2021/0101/xxx.mp4",
     "RestoreDay": 1
 }
 ```
 
 #### 输出示例
 
-```
+```json
 {
-  "Response": {
-    "RequestId": "requestId"
-  }
+    "Response": {
+        "RequestId": "requestId"
+    }
 }
 ```
 
@@ -92,7 +90,7 @@ X-TC-Action: RestoreMediaForDY
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/213/6982)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/266/31774#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|
@@ -101,6 +99,7 @@ X-TC-Action: RestoreMediaForDY
 | InvalidParameter | 参数错误。 |
 | InvalidParameterValue | 参数取值错误。 |
 | InvalidParameterValue.NotRestorable | 参数错误：文件不支持解冻。 |
+| InvalidParameterValue.OriginalStorageClass | 参数值错误：文件原存储类型异常。 |
 | InvalidParameterValue.RestoreDay | 参数错误：解冻天数错误。 |
 | ResourceNotFound | 资源不存在。 |
 | ResourceNotFound.FileNotExist | 资源不存在：文件不存在。 |
