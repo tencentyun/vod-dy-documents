@@ -1,10 +1,10 @@
 ## 1. 接口描述
 
-<strong><font color="blue">此接口被设置为 产品内部展示 。</font></strong>
-
 接口请求域名： vod.tencentcloudapi.com 。
 
 删除指定文件，如果是 m3u8 文件，会同时删除 ts 文件。
+
+默认接口请求频率限制：100次/秒。
 
 <div class="rno-api-explorer">
     <div class="rno-api-explorer-inner">
@@ -24,23 +24,23 @@
 
 ## 2. 输入参数
 
-以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/213/6976)。
+以下请求参数列表仅列出了接口请求参数和部分公共参数，完整公共参数列表见 [公共请求参数](https://cloud.tencent.com/document/api/266/31756)。
 
 | 参数名称 | 必选 | 类型 | 描述 |
 |---------|---------|---------|---------|
-| Action | 是 | String | 公共参数，本接口取值：DeleteMediaForDY。 |
-| Version | 是 | String | 公共参数，本接口取值：2018-07-17。 |
-| Region | 否 | String | 公共参数，本接口不需要传递此参数。 |
-| CosBucket | 是 | String | 文件所在的 COS Bucket 名，如 bucketxxx。 |
-| CosRegion | 是 | String | 文件所在的 COS Bucket 所属园区，如 ap-chongqing。 |
-| ObjectSet.N | 是 | Array of String | 文件的 COS 完整路径。 |
-| SessionContext | 否 | String | 来源上下文，用于透传用户请求信息，删除回调将返回该字段值，最长 1000 个字符。 |
+| Action | 是 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，本接口取值：DeleteMediaForDY。 |
+| Version | 是 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，本接口取值：2018-07-17。 |
+| Region | 否 | String | [公共参数](https://cloud.tencent.com/document/api/266/31756)，此参数为可选参数。 |
+| CosBucket | 是 | String | 文件所在的 COS Bucket 名，如 wsd-tx-ugc-pub。<br/>示例值：wsd-tx-ugc-pub |
+| CosRegion | 是 | String | 文件所在的 COS Bucket 所属园区，如 ap-chongqing。<br/>示例值：ap-chongqing |
+| ObjectSet.N | 是 | Array of String | 文件的 COS 完整路径。<br/>示例值：["2021/0101/xxx.m3u8"] |
+| SessionContext | 否 | String | 来源上下文，用于透传用户请求信息，删除回调将返回该字段值，最长 1000 个字符。<br/>示例值：id123 |
 
 ## 3. 输出参数
 
 | 参数名称 | 类型 | 描述 |
 |---------|---------|---------|
-| RequestId | String | 唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。|
+| RequestId | String | 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。|
 
 ## 4. 示例
 
@@ -50,7 +50,7 @@
 
 ```
 https://vod.tencentcloudapi.com/?Action=DeleteMediaForDY
-&CosBucket=bucketxxx
+&CosBucket=wsd-tx-ugc-pub
 &CosRegion=ap-chongqing
 &ObjectSet.0=2021/0101/xxx.m3u8
 &<公共请求参数>
@@ -58,11 +58,11 @@ https://vod.tencentcloudapi.com/?Action=DeleteMediaForDY
 
 #### 输出示例
 
-```
+```json
 {
-  "Response": {
-    "RequestId": "requestId"
-  }
+    "Response": {
+        "RequestId": "requestId"
+    }
 }
 ```
 
@@ -83,7 +83,7 @@ https://vod.tencentcloudapi.com/?Action=DeleteMediaForDY
 
 ## 6. 错误码
 
-以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/213/6982)。
+以下仅列出了接口业务逻辑相关的错误码，其他错误码详见 [公共错误码](https://cloud.tencent.com/document/api/266/31774#.E5.85.AC.E5.85.B1.E9.94.99.E8.AF.AF.E7.A0.81)。
 
 | 错误码 | 描述 |
 |---------|---------|
